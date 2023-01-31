@@ -6,8 +6,16 @@ public class Groep<T> implements GroepInterface<T>, Iterable<T> {
 //    maar bij get is T ook een type. get Gast?
 //    wat is het verschill een itterator en een for loop?
 //    een groep is een array van gasten
-    Object[] groep = new Object[10];
+    Object[] groep;
     int laatste;
+    public Groep(int grootte){
+       this.groep  = new Object[grootte];
+    }
+
+    public Groep() {
+        this.groep = new Object[10];
+    }
+
 
     public GroepIterator iterator() {
         return this.new GroepIterator();
