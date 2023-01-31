@@ -8,9 +8,14 @@ public class Gast {
             "de Trompetter", "Baantjes", "de Jong", "Sanchez", "Bakker", "Eggertsson","Sturluson", "Valjean", "de Grote", "Precies", "Khan", "Snorremans","de Cock met C-O-C-K", "Stallman", "Lovecraft", "Erklaas", "Gagarin","Einstein", "Heijn", "de Geer", "Swift", "Torvalds", "Gosling", "Stroustrup"
     }; //30
 
-    static String[] volledigeNaam = getRandomNaam();
-    private static String voorNaam = volledigeNaam[0];
-    private static String achterNaam = volledigeNaam[1];
+
+    private  String voorNaam;
+    private  String achterNaam;
+    public Gast() {
+        String[] naam = getRandomNaam();
+        this.voorNaam = naam[0];
+        this.achterNaam = naam[1];
+    }
     public Gast(String achterNaam){
         this.achterNaam = achterNaam;
     }
@@ -18,7 +23,10 @@ public class Gast {
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
     }
-    public static String[] getRandomNaam(){
+
+
+
+    public  String[] getRandomNaam(){
         int randVoorNaam = (int) (Math.random() * VOORNAMEN.length - 1);
         int randAchterNaam = (int) (Math.random() * ACHTERNAMEN.length - 1);
         String[] naam = {VOORNAMEN[randVoorNaam],ACHTERNAMEN[randAchterNaam]};
